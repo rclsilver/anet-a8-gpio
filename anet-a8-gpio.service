@@ -1,0 +1,11 @@
+[Unit]
+Description=Anet A8 gpio manager
+
+[Service]
+ExecStart=/usr/sbin/anet-a8-gpio
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
